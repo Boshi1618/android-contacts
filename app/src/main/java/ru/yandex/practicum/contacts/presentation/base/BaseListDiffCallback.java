@@ -4,14 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DiffUtil;
 
-import ru.yandex.practicum.contacts.presentation.*;
-import ru.yandex.practicum.contacts.presentation.filter.model.FilterContactTypeUi;
 
 public class BaseListDiffCallback<T extends ListDiffInterface<T>> extends DiffUtil.ItemCallback<T> {
 
     @Override
     public boolean areItemsTheSame(@NonNull T oldItem, @NonNull T newItem) {
-        return false;
+        return oldItem.theSameAs(newItem);
     }
 
     @Override
